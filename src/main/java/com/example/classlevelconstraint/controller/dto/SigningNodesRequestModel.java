@@ -1,6 +1,7 @@
 package com.example.classlevelconstraint.controller.dto;
 
 import com.example.classlevelconstraint.infrastructure.validation.*;
+import jakarta.validation.Valid;
 import lombok.Getter;
 
 import java.util.List;
@@ -12,7 +13,7 @@ public class SigningNodesRequestModel {
 
     private Integer id;
 
-    @ValidString
+    @NonBlankString
     private String name;
     private String description;
 
@@ -22,6 +23,7 @@ public class SigningNodesRequestModel {
     @PositiveInteger
     private Integer totalSignatureNumber;
 
-    @ValidList
+    @Valid
+    @NonEmptyList
     private List<UserRequestModel> users;
 }

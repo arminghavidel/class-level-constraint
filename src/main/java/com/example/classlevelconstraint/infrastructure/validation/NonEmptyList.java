@@ -1,14 +1,15 @@
 package com.example.classlevelconstraint.infrastructure.validation;
 
-import javax.validation.Constraint;
-import javax.validation.Payload;
+import jakarta.validation.Constraint;
+import jakarta.validation.Payload;
+
 import java.lang.annotation.*;
 
 @Documented
-@Constraint(validatedBy = ListValidator.class)
+@Constraint(validatedBy = NonEmptyListValidator.class)
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface ValidList {
+public @interface NonEmptyList {
 
     String message() default "List should be non-empty!";
     Class<?>[] groups() default {};

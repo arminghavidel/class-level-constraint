@@ -1,9 +1,9 @@
 package com.example.classlevelconstraint.infrastructure.validation;
 
-import com.example.classlevelconstraint.controller.dto.SigningNodesRequestModel;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
+import com.example.classlevelconstraint.controller.dto.SigningNodesRequestModel;
+import jakarta.validation.ConstraintValidator;
+import jakarta.validation.ConstraintValidatorContext;
 
 public class SignatureNumbersValidator implements
         ConstraintValidator<ValidSignatureNumbers, SigningNodesRequestModel> {

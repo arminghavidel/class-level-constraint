@@ -1,10 +1,10 @@
 package com.example.classlevelconstraint.infrastructure.validation;
 
+
 import com.example.classlevelconstraint.controller.dto.SigningNodesRequestModel;
 import com.example.classlevelconstraint.controller.dto.UserRequestModel;
-
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
+import jakarta.validation.ConstraintValidator;
+import jakarta.validation.ConstraintValidatorContext;
 
 public class DecisionWeightValidator implements
         ConstraintValidator<ValidDecisionWight, SigningNodesRequestModel> {

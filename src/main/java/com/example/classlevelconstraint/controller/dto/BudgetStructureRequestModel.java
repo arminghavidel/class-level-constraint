@@ -1,7 +1,8 @@
 package com.example.classlevelconstraint.controller.dto;
 
-import com.example.classlevelconstraint.infrastructure.validation.ValidList;
-import com.example.classlevelconstraint.infrastructure.validation.ValidString;
+import com.example.classlevelconstraint.infrastructure.validation.NonBlankString;
+import com.example.classlevelconstraint.infrastructure.validation.NonEmptyList;
+import jakarta.validation.Valid;
 import lombok.Getter;
 
 import java.util.List;
@@ -11,11 +12,12 @@ public class BudgetStructureRequestModel {
 
     private Integer id;
 
-    @ValidString
+    @NonBlankString
     private String name;
     private boolean disable;
     private String description;
 
-    @ValidList
+    @Valid
+    @NonEmptyList
     private List<SigningNodesRequestModel> signingNodes;
 }

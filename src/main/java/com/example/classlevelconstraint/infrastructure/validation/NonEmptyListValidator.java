@@ -1,10 +1,11 @@
 package com.example.classlevelconstraint.infrastructure.validation;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
+import jakarta.validation.ConstraintValidator;
+import jakarta.validation.ConstraintValidatorContext;
+
 import java.util.List;
 
-public class ListValidator implements ConstraintValidator<ValidList, List<?>> {
+public class NonEmptyListValidator implements ConstraintValidator<NonEmptyList, List<?>> {
 
     @Override
     public boolean isValid(List value, ConstraintValidatorContext context) {
