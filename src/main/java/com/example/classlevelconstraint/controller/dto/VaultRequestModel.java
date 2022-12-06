@@ -1,5 +1,6 @@
 package com.example.classlevelconstraint.controller.dto;
 
+import com.example.classlevelconstraint.infrastructure.validation.ValidList;
 import lombok.Getter;
 
 import java.util.List;
@@ -11,5 +12,7 @@ public class VaultRequestModel {
     private String name;
     private String description;
     private boolean disable;
+
+    @ValidList
     private List<BudgetStructureRequestModel> budgetStructures;
 }
