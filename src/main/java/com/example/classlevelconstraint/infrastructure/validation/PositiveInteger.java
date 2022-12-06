@@ -12,6 +12,8 @@ import java.lang.annotation.*;
 public @interface PositiveInteger {
 
     String message() default "Integer should be positive and non-zero!";
+
     Class<?>[] groups() default {};
+
     Class<? extends Payload>[] payload() default {};
 }

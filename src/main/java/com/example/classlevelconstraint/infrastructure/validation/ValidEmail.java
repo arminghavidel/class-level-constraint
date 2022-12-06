@@ -12,6 +12,8 @@ import java.lang.annotation.*;
 public @interface ValidEmail {
 
     String message() default "Email format should be valid!";
+
     Class<?>[] groups() default {};
+
     Class<? extends Payload>[] payload() default {};
 }

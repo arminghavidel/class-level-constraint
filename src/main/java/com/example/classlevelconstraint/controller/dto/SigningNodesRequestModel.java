@@ -1,29 +1,22 @@
 package com.example.classlevelconstraint.controller.dto;
 
 import com.example.classlevelconstraint.infrastructure.validation.*;
+import jakarta.validation.GroupSequence;
 import jakarta.validation.Valid;
-import lombok.Getter;
 
 import java.util.List;
 
-@Getter
-@ValidDecisionWight
-@ValidSignatureNumbers
-public class SigningNodesRequestModel {
-
-    private Integer id;
-
-    @NonBlankString
-    private String name;
-    private String description;
-
-    @PositiveInteger
-    private Integer requiredSignatureNumber;
-
-    @PositiveInteger
-    private Integer totalSignatureNumber;
-
-    @Valid
-    @NonEmptyList
-    private List<UserRequestModel> users;
+@ValidDecisionWight(groups = ClassLevelConstraint.class)
+@ValidSignatureNumbers(groups = ClassLevelConstraint.class)
+@GroupSequence(value = {SigningNodesRequestModel.class, FieldLevelConstraint.class, ClassLevelConstraint.class})
+public record SigningNodesRequestModel(
+        Integer id,
+        @NonBlankName String name,
+        String description,
+        @PositiveInteger(groups = FieldLevelConstraint.class, message = "required signature number should be positive and non-zero!")
+        Integer requiredSignatureNumber,
+        @PositiveInteger(groups = FieldLevelConstraint.class, message = "total signature number should be positive and non-zero!")
+        Integer totalSignatureNumber,
+        @Valid @NonEmptyList List<UserRequestModel> users
+) {
 }

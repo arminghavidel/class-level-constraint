@@ -1,18 +1,13 @@
 package com.example.classlevelconstraint.controller.dto;
 
-import com.example.classlevelconstraint.infrastructure.validation.NonBlankString;
+import com.example.classlevelconstraint.infrastructure.validation.FieldLevelConstraint;
 import com.example.classlevelconstraint.infrastructure.validation.PositiveInteger;
 import com.example.classlevelconstraint.infrastructure.validation.ValidEmail;
-import lombok.Getter;
 
-@Getter
-public class UserRequestModel {
-
-    @ValidEmail
-    @NonBlankString
-    private String email;
-
-    @PositiveInteger
-    private Integer decisionWeight;
-    private boolean disable;
+public record UserRequestModel(
+        @ValidEmail String email,
+        @PositiveInteger(groups = FieldLevelConstraint.class, message = "Decision weight should be positive and non-zero!")
+        Integer decisionWeight,
+        boolean disable
+) {
 }

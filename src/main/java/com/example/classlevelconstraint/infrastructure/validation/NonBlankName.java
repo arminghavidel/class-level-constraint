@@ -6,12 +6,14 @@ import jakarta.validation.Payload;
 import java.lang.annotation.*;
 
 @Documented
-@Constraint(validatedBy = NonBlankStringValidator.class)
+@Constraint(validatedBy = NonBlankNameValidator.class)
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface NonBlankString {
+public @interface NonBlankName {
 
-    String message() default "String should not be null or blank!";
+    String message() default "Name should not be null or blank!";
+
     Class<?>[] groups() default {};
+
     Class<? extends Payload>[] payload() default {};
 }

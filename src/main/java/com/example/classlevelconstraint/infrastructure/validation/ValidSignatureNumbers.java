@@ -13,7 +13,9 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ValidSignatureNumbers {
 
-    String message() default "The requiredSignatureNumber property should be less than or equal to totalSignatureNumber property.";
+    String message() default "The requiredSignatureNumber property should be less than or equal to totalSignatureNumber property!";
+
     Class<?>[] groups() default {};
+
     Class<? extends Payload>[] payload() default {};
 }

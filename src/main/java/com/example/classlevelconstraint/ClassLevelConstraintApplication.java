@@ -9,5 +9,4 @@ public class ClassLevelConstraintApplication {
     public static void main(String[] args) {
         SpringApplication.run(ClassLevelConstraintApplication.class, args);
     }
-
 }

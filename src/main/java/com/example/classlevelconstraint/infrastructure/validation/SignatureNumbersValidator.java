@@ -10,6 +10,6 @@ public class SignatureNumbersValidator implements
 
     @Override
     public boolean isValid(SigningNodesRequestModel value, ConstraintValidatorContext context) {
-        return value.getRequiredSignatureNumber() <= value.getTotalSignatureNumber();
+        return value.requiredSignatureNumber() <= value.totalSignatureNumber();
     }
 }

@@ -11,10 +11,10 @@ public class DecisionWeightValidator implements
 
     @Override
     public boolean isValid(SigningNodesRequestModel value, ConstraintValidatorContext context) {
-        return value.getUsers().stream()
-                .map(UserRequestModel::getDecisionWeight)
+        return value.users().stream()
+                .map(UserRequestModel::decisionWeight)
                 .reduce(Integer::sum)
-                .map(sum -> sum.equals(value.getTotalSignatureNumber()))
+                .map(sum -> sum.equals(value.totalSignatureNumber()))
                 .orElse(false);
     }
 }

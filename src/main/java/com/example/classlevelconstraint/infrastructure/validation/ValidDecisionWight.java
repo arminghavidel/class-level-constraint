@@ -13,7 +13,9 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ValidDecisionWight {
 
-    String message() default "Sum of all decisionWeight property of users should be equal to totalSignatureNumber property.";
+    String message() default "Sum of all decisionWeight property of users should be equal to totalSignatureNumber property!";
+
     Class<?>[] groups() default {};
+
     Class<? extends Payload>[] payload() default {};
 }

@@ -12,6 +12,8 @@ import java.lang.annotation.*;
 public @interface NonEmptyList {
 
     String message() default "List should be non-empty!";
+
     Class<?>[] groups() default {};
+
     Class<? extends Payload>[] payload() default {};
 }

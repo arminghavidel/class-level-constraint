@@ -20,6 +20,6 @@ public class VaultController {
         if(result.hasErrors()) {
             throw new InvalidRequestException(result);
         }
-        return ResponseEntity.status(HttpStatus.CREATED).body(request.getId());
+        return ResponseEntity.status(HttpStatus.CREATED).body(request.id());
     }
 }
