@@ -1,6 +1,7 @@
 package com.example.classlevelconstraint.infrastructure.validation;
 
 import javax.validation.Constraint;
+import javax.validation.Payload;
 import java.lang.annotation.*;
 
 @Documented
@@ -8,4 +9,8 @@ import java.lang.annotation.*;
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface PositiveInteger {
+
+    String message() default "Integer should be positive and non-zero!";
+    Class<?>[] groups() default {};
+    Class<? extends Payload>[] payload() default {};
 }
