@@ -1,14 +1,12 @@
 package com.example.classlevelconstraint.controller.dto;
 
-import com.example.classlevelconstraint.infrastructure.validation.PositiveInteger;
-import com.example.classlevelconstraint.infrastructure.validation.ValidList;
-import com.example.classlevelconstraint.infrastructure.validation.ValidSignatureNumbers;
-import com.example.classlevelconstraint.infrastructure.validation.ValidString;
+import com.example.classlevelconstraint.infrastructure.validation.*;
 import lombok.Getter;
 
 import java.util.List;
 
 @Getter
+@ValidDecisionWight
 @ValidSignatureNumbers
 public class SigningNodesRequestModel {
 
