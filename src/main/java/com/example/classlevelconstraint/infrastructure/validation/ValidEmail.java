@@ -5,12 +5,12 @@ import javax.validation.Payload;
 import java.lang.annotation.*;
 
 @Documented
-@Constraint(validatedBy = StringValidator.class)
+@Constraint(validatedBy = EmailValidator.class)
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface ValidString {
+public @interface ValidEmail {
 
-    String message() default "String should not be null or blank!";
+    String message() default "Email format should be valid!";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 }
