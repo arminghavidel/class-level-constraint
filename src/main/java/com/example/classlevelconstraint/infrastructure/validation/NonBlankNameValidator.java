@@ -3,6 +3,9 @@ package com.example.classlevelconstraint.infrastructure.validation;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 
+/**
+ * Check the name property to not be null or blank.
+ * */
 public class NonBlankNameValidator implements ConstraintValidator<NonBlankName, String> {
 
     @Override

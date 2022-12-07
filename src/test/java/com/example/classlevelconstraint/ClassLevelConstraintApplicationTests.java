@@ -122,7 +122,7 @@ class ClassLevelConstraintApplicationTests {
     void createVault_withInvalidDecisionWeight_returnsBadRequest(Integer decisionWight) throws Exception {
         var firstUser = new UserRequestModel("user1@user.com", decisionWight, false);
         var secondUser = new UserRequestModel("user2@user.com", 2, false);
-        var signingNode = new SigningNodesRequestModel(null, "sn1", "sn1 description", 1, 3, List.of(firstUser, secondUser));
+        var signingNode = new SigningNodesRequestModel(null, "sn1", "sn1 description", 1, decisionWight != null ? decisionWight + 2 : 2, List.of(firstUser, secondUser));
         var budgetStructure = new BudgetStructureRequestModel(null, "bs1", false, "bs1 description", List.of(signingNode));
         var request = new CreateVaultRequest(1, "vault1", "vault1 description", false, List.of(budgetStructure));
 
